@@ -1,7 +1,7 @@
 
 executables:
 {
-    legatoHashMap = ( netComponent )
+    legatoHashMap = ( hashComponent )
 }
 
 processes:

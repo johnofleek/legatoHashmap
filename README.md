@@ -11,6 +11,9 @@ From project root
 
 source ~/legato/packages/legato.sdk.latest/resources/configlegatoenv
 
+***Due to broken legato-spm - grrr*** 
+source ~/legato/packages/legato.sdk.16.10.4.wp85-wp75-native-x86_64-201712131538/resources/configlegatoenv
+
 **Build for wp85**  
 
 ```
