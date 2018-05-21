@@ -1,0 +1,39 @@
+
+executables:
+{
+    legatoHashMap = ( netComponent )
+}
+
+processes:
+{
+    run:
+    {
+        ( legatoHashMap )
+    }
+}
+
+requires:
+{
+    device:
+    {
+    }
+    file:
+    {
+    }
+}
+
+bindings:
+{
+
+}
+
+extern:
+{
+
+}
+
+
+start: auto
+
+sandboxed: true
+

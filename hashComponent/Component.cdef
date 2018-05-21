@@ -1,0 +1,33 @@
+/*
+ * legatoHashMap
+ *
+ * Component.cdef file 
+ */
+
+
+sources: 
+{
+    main.c
+    
+}
+
+requires:
+{
+    api:
+    {
+    }
+}
+
+provides:
+{
+    api:
+    {
+
+    }
+}
+
+
+cxxflags:
+{
+
+}
