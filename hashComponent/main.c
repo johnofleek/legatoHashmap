@@ -1,18 +1,11 @@
 #include "legato.h"
 #include "interfaces.h"
 
+#include "probe.h"
+
 #define HASHMAP_STRING_TABLE_SIZE	32
 
 le_hashmap_Ref_t stringTable;
-
-/*
-struct dataVsId
-{
-    uint64_t probeId;
-    float probeValue;
-    string probeName;
-};
-*/
 
 
 
@@ -42,8 +35,8 @@ char * kvs_stringGet(const char* keyStr)
 char values[16][32];
 char keys[16][32];
 
-COMPONENT_INIT
-{   
+static void stringTest(void)
+{
     LE_INFO("started\n");
     sprintf(keys[0], "Key0");
     sprintf(values[0], "value0");
@@ -60,23 +53,23 @@ COMPONENT_INIT
     sprintf(keys[4], "Key4");
     sprintf(values[4], "value4");
 
-	kvs_stringInit();
+    kvs_stringInit();
 
     LE_INFO("1.0");
-	kvs_stringPut(keys[0], values[0]);
+    kvs_stringPut(keys[0], values[0]);
     kvs_stringPut(keys[1], values[1]);
     kvs_stringPut(keys[2], values[2]);
 
 
-	LE_INFO("%s", kvs_stringGet("Key0"));
+    LE_INFO("%s", kvs_stringGet("Key0"));
     LE_INFO("%s", kvs_stringGet("Key1"));
     LE_INFO("%s", kvs_stringGet("Key2"));
     LE_INFO("%s", kvs_stringGet("Key3"));
 
 
     LE_INFO("1.1");
-	LE_INFO("%s", kvs_stringGet(keys[0]));
-	LE_INFO("%s", kvs_stringGet(keys[1]));
+    LE_INFO("%s", kvs_stringGet(keys[0]));
+    LE_INFO("%s", kvs_stringGet(keys[1]));
     LE_INFO("%s", kvs_stringGet(keys[2]));
 
     LE_INFO("1.2");
@@ -105,4 +98,10 @@ COMPONENT_INIT
     LE_INFO("%s", kvs_stringGet("Key2"));
     LE_INFO("%s", kvs_stringGet("Key3"));
     LE_INFO("%s", kvs_stringGet("Key4"));
+}
+
+COMPONENT_INIT
+{
+    stringTest();
+    probeNameTest();
 }
